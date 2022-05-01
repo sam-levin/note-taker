@@ -1,28 +1,9 @@
 {
   "data": [
     {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "Title": "Penis",
-      "text": "Megacock",
-      "id": "1"
-    },
-    {
-      "Title": "Penis",
-      "text": "Megacock",
-      "id": "2"
-    },
-    {
-      "Title": "Penis",
-      "text": "Balls",
-      "id": "3"
-    },
-    {
-      "title": "Penis",
-      "text": "Balls",
-      "id": "4"
+      "title": "Deploy to heroku",
+      "text": "Figure out how to deploy to heroku",
+      "id": "333a891bxal2npp09c"
     }
   ]
 }

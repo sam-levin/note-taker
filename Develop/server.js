@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3001;
 const fs = require('fs');
 const path = require('path');
 const { type } = require('os');
+const uniqid = require('uniqid')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,13 +15,13 @@ app.get('/api/notes', (req, res) => {
     res.json(data);
 }) 
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, './public/index.html'));
-// });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname + './public/notes.html'))
-// })
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/notes.html'))
+})
 
 app.listen(3001, () => {
     console.log(`API server now on port 3001!`);
@@ -28,7 +29,7 @@ app.listen(3001, () => {
 
 app.post('/api/notes', (req, res) => {
     // req.body is where incoming content will be
-    req.body.id = data.length.toString();
+    req.body.id = uniqid();
     if (!validateNote(req.body)) {
         res.status(400).send("The note isn't properly formatted")
     } else {
